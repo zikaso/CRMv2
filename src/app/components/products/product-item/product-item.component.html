@@ -1,0 +1,12 @@
+<tr *ngIf="p">
+  <td>{{p.id}}</td>
+  <td>{{p.name}}</td>
+  <td>{{p.price}}</td>
+  <td>{{p.quantity}}</td>
+  <td>{{p.selected}}</td>
+  <td>{{p.available}}</td>
+  <td> <div class="btn btn-primary btn-sm"><span class="fa fa-edit" (click)="onEdit(p)"></span></div></td>
+  <td> <div class="btn btn-danger btn-sm"><span class="fa fa-trash-o" (click)="onDelete(p)"></span></div></td>
+</tr>
+
+

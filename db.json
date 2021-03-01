@@ -1,0 +1,29 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name" : "pc",
+      "price": 45220,
+      "quantity": 2000,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 2,
+      "name" : "Mobile MAC",
+      "price": 45220,
+      "quantity": 2000,
+      "selected": true,
+      "available": true
+    },
+    {
+      "id": 3,
+      "name" : "Mobile MI",
+      "price": 45220,
+      "quantity": 2000,
+      "selected": true,
+      "available": true
+    }
+
+  ]
+}
