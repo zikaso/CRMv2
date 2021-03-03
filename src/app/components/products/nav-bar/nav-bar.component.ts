@@ -1,4 +1,6 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import {ProductActionEvent, ProductActionEventTypes} from "../../../state/DataState";
+import {EventDriverService} from "../../../state/event.driver.service";
 
 @Component({
   selector: 'app-nav-bar',
@@ -7,16 +9,17 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
 })
 export class NavBarComponent implements OnInit {
 
-@Output()  eventEmitter:EventEmitter<any> = new EventEmitter<any>()
+@Output()  eventEmitter:EventEmitter<ProductActionEvent> = new EventEmitter()
 
 
-  constructor() { }
+  constructor(   private  eventDriverService:EventDriverService) { }
 
   ngOnInit(): void {
   }
 
   onShowAll() {
-     this.eventEmitter.emit()
+    // this.eventEmitter.emit({type:ProductActionEventTypes.GET_ALL_PRODUCT})
+    this.eventDriverService.publishEvent({type:ProductActionEventTypes.GET_ALL_PRODUCT})
   }
 
   onSearch(value: any) {
@@ -24,7 +27,8 @@ export class NavBarComponent implements OnInit {
   }
 
   onAdd() {
-
+    // this.eventEmitter.emit({type:ProductActionEventTypes.ADD_NEW_PRODUCT})
+      this.eventDriverService.publishEvent({type:ProductActionEventTypes.ADD_NEW_PRODUCT})
   }
 
 

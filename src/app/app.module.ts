@@ -14,6 +14,7 @@ import { ProductItemComponent } from './components/products/product-item/product
 
  const routes:Routes=[
   {path:"products",component:ProductsComponent},
+  {path:"save_product/:product",component:SaveProductComponent},
   ]
 
 export function kcForctory( keycloakSecur:KeycloakSecurityService) {

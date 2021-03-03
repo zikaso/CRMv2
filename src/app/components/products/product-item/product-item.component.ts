@@ -1,6 +1,6 @@
 import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
-import {OuterSubscriber} from "rxjs/internal-compatibility";
 import {ProductModel} from "../../../models/product.model";
+import {ProductActionEvent, ProductActionEventTypes} from "../../../state/DataState";
 
 @Component({
   selector: 'app-product-item',
@@ -9,7 +9,7 @@ import {ProductModel} from "../../../models/product.model";
 })
 export class ProductItemComponent implements OnInit {
 
-  @Output() eventEmitter:EventEmitter<any>= new EventEmitter<any>();
+  @Output() eventEmitter:EventEmitter<ProductActionEvent>= new EventEmitter();
   @Input("result") p:ProductModel | null=null;
 
 
@@ -19,7 +19,7 @@ export class ProductItemComponent implements OnInit {
   }
 
   onEdit(p: ProductModel) {
-
+      this.eventEmitter.emit({type:ProductActionEventTypes.EDIT_PRODUCT,payload:p});
   }
 
   onDelete(p: ProductModel) {

@@ -1,3 +1,19 @@
+
+
+export enum ProductActionEventTypes{
+  "GET_ALL_PRODUCT",
+  "ADD_NEW_PRODUCT",
+  "EDIT_PRODUCT",
+  "DELETE_PRODUCT",
+
+}
+
+
+export interface ProductActionEvent{
+    type:ProductActionEventTypes,
+    payload?: any;
+}
+
 export enum DataStateEnum{
   LOADING,
   LOADED,
